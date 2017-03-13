@@ -2,6 +2,10 @@
 
 var http = require('http');
 var fs = require('fs');
+var querystring = require("querystring");
+
+
+
 var server = http.createServer(handler);
 
 var message = 'I am so happy to be part of the Node Girls workshop!';
@@ -23,8 +27,8 @@ function handler (req, resp) {
         resp.end(file);
       });
 
+
     } else {
-      console.log(endpoint);
       var contentType = {
         'html':'text/html',
         'css':'text/css',
@@ -42,6 +46,24 @@ function handler (req, resp) {
         }
         resp.end(file);
       });
+
+      var allTheData = '';
+        req.on('data', function (chunkOfData) {
+
+          allTheData += chunkOfData;
+      });
+
+      req.on('end', function () {
+
+        var convertedData = querystring.parse(allTheData);
+        console.log(convertedData);
+
+        resp.writeHead(205, {'Location': '/'});
+
+        //resp.end()
+
+      });
+
     }
   }
 
