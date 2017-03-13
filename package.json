@@ -1,0 +1,19 @@
+{
+  "name": "workshop-cms",
+  "version": "1.0.0",
+  "description": "Node workshop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucyrose93/workshop-cms.git"
+  },
+  "author": "FAC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucyrose93/workshop-cms/issues"
+  },
+  "homepage": "https://github.com/lucyrose93/workshop-cms#readme"
+}
